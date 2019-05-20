@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B76D9122292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */; };
+		1B76D9342292C2FF006962A5 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B76D9332292C2FF006962A5 /* CoreSpotlight.framework */; };
 		1BD90F2E22929D910019A0A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F2D22929D910019A0A3 /* AppDelegate.m */; };
 		1BD90F3022929D940019A0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD90F2F22929D940019A0A3 /* Assets.xcassets */; };
 		1BD90F3322929D940019A0A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD90F3122929D940019A0A3 /* MainMenu.xib */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		1B76D9102292AC92006962A5 /* NSWindow+CanBecameKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSWindow+CanBecameKeyWindow.h"; sourceTree = "<group>"; };
 		1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+CanBecameKeyWindow.m"; sourceTree = "<group>"; };
+		1B76D9332292C2FF006962A5 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
 		1BD90F2922929D910019A0A3 /* Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Searcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD90F2C22929D910019A0A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD90F2D22929D910019A0A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,18 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B76D9342292C2FF006962A5 /* CoreSpotlight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B76D9322292C2FE006962A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B76D9332292C2FF006962A5 /* CoreSpotlight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1BD90F2022929D910019A0A3 = {
 			isa = PBXGroup;
 			children = (
 				1BD90F3D22929F300019A0A3 /* Auxillary files */,
 				1BD90F2B22929D910019A0A3 /* Searcher */,
 				1BD90F2A22929D910019A0A3 /* Products */,
+				1B76D9322292C2FE006962A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
