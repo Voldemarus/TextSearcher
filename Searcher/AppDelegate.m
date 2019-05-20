@@ -26,6 +26,7 @@ double const StatusItemHeight = 28.0;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	
 	[self setupStatusBar];
+	[NSApp setActivationPolicy: NSApplicationActivationPolicyAccessory];
 }
 
 
