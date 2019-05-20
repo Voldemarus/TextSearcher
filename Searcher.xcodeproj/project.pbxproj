@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B76D9122292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */; };
 		1BD90F2E22929D910019A0A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD90F2D22929D910019A0A3 /* AppDelegate.m */; };
 		1BD90F3022929D940019A0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BD90F2F22929D940019A0A3 /* Assets.xcassets */; };
 		1BD90F3322929D940019A0A3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD90F3122929D940019A0A3 /* MainMenu.xib */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B76D9102292AC92006962A5 /* NSWindow+CanBecameKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSWindow+CanBecameKeyWindow.h"; sourceTree = "<group>"; };
+		1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+CanBecameKeyWindow.m"; sourceTree = "<group>"; };
 		1BD90F2922929D910019A0A3 /* Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Searcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD90F2C22929D910019A0A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD90F2D22929D910019A0A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		1BD90F3422929D940019A0A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BD90F3522929D940019A0A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1BD90F3722929D940019A0A3 /* Searcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Searcher.entitlements; sourceTree = "<group>"; };
+		1BD90F3E22929F4D0019A0A3 /* BigIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		1BD90F2022929D910019A0A3 = {
 			isa = PBXGroup;
 			children = (
+				1BD90F3D22929F300019A0A3 /* Auxillary files */,
 				1BD90F2B22929D910019A0A3 /* Searcher */,
 				1BD90F2A22929D910019A0A3 /* Products */,
 			);
@@ -63,6 +68,16 @@
 				1BD90F3722929D940019A0A3 /* Searcher.entitlements */,
 			);
 			path = Searcher;
+			sourceTree = "<group>";
+		};
+		1BD90F3D22929F300019A0A3 /* Auxillary files */ = {
+			isa = PBXGroup;
+			children = (
+				1BD90F3E22929F4D0019A0A3 /* BigIcon.png */,
+				1B76D9102292AC92006962A5 /* NSWindow+CanBecameKeyWindow.h */,
+				1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */,
+			);
+			path = "Auxillary files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +111,11 @@
 				TargetAttributes = {
 					1BD90F2822929D910019A0A3 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -134,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B76D9122292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m in Sources */,
 				1BD90F3622929D940019A0A3 /* main.m in Sources */,
 				1BD90F2E22929D910019A0A3 /* AppDelegate.m in Sources */,
 			);
@@ -268,7 +289,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Searcher/Searcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UKBNTL7HA9;
@@ -286,7 +306,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Searcher/Searcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = UKBNTL7HA9;
