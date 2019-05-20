@@ -75,30 +75,30 @@ double const StatusItemHeight = 28.0;
 - (void) processButtonClick:(id) sender
 {
 	NSString *stringToSearch = tf.stringValue;
-	NSLog(@"Button clicked -- %@", stringToSearch);
-//
-//	BOOL opened = [[NSWorkspace sharedWorkspace] showSearchResultsForQueryString:stringToSearch];
+//	NSLog(@"Button clicked -- %@", stringToSearch);
+
+	BOOL opened = [[NSWorkspace sharedWorkspace] showSearchResultsForQueryString:stringToSearch];
 //	NSLog(@"opened = %hhd", opened);
 //	return;
 
-	NSString *scriptSourece = [NSString stringWithFormat:@""
-				@"use AppleScript version\"2.4\"\n"
-				@"use framework \"Foundation\"\n"
-				@"use framework \"AppKit\"\n"
-				@"use scripting additions\n"
-				@"set theWord to \"%@\"\n"
-							   @"tell application \"Finder\" to «event aevtspot» theWord\n"
-								  ,stringToSearch];
-	NSLog(@"script - %@", scriptSourece);
-	NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptSourece];
-	if (script) {
-		NSDictionary *errorInfo = nil;
-		NSAppleEventDescriptor *success = [script executeAndReturnError:&errorInfo];
-#pragma unused (success)
-		if (errorInfo) {
-			NSLog(@"error - %@",errorInfo);
-		}
-	}
+//	NSString *scriptSourece = [NSString stringWithFormat:@""
+//				@"use AppleScript version\"2.4\"\n"
+//				@"use framework \"Foundation\"\n"
+//				@"use framework \"AppKit\"\n"
+//				@"use scripting additions\n"
+//				@"set theWord to \"%@\"\n"
+//							   @"tell application \"Finder\" to «event aevtspot» theWord\n"
+//								  ,stringToSearch];
+//	NSLog(@"script - %@", scriptSourece);
+//	NSAppleScript *script = [[NSAppleScript alloc] initWithSource:scriptSourece];
+//	if (script) {
+//		NSDictionary *errorInfo = nil;
+//		NSAppleEventDescriptor *success = [script executeAndReturnError:&errorInfo];
+//#pragma unused (success)
+//		if (errorInfo) {
+//			NSLog(@"error - %@",errorInfo);
+//		}
+//	}
 }
 
 
