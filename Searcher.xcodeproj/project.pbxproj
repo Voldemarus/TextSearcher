@@ -72,6 +72,7 @@
 		1BD90F2B22929D910019A0A3 /* Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				1B76D9352293E2B9006962A5 /* Definitions.h */,
 				1BD90F2C22929D910019A0A3 /* AppDelegate.h */,
 				1BD90F2D22929D910019A0A3 /* AppDelegate.m */,
 				1BD90F2F22929D940019A0A3 /* Assets.xcassets */,
@@ -79,7 +80,6 @@
 				1BD90F3422929D940019A0A3 /* Info.plist */,
 				1BD90F3522929D940019A0A3 /* main.m */,
 				1BD90F3722929D940019A0A3 /* Searcher.entitlements */,
-				1B76D9352293E2B9006962A5 /* Definitions.h */,
 			);
 			path = Searcher;
 			sourceTree = "<group>";
