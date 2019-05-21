@@ -29,6 +29,12 @@ double const StatusItemHeight = 28.0;
 	
 	[self setupStatusBar];
 	[NSApp setActivationPolicy: NSApplicationActivationPolicyAccessory];
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+			selector:@selector(wakeFromSleep:)
+			name:NSWorkspaceDidWakeNotification
+		    object:nil];
+	
+
 }
 
 
@@ -45,16 +51,21 @@ double const StatusItemHeight = 28.0;
 		   statusItemWithLength:NSVariableStatusItemLength];
 	}
 	// Wrapper for statusItem content
-	NSView *searchView = [[NSView alloc] initWithFrame:CGRectMake(0, 0, StatusItemLength, StatusItemHeight)];
-	NSButton *button = [[NSButton alloc] initWithFrame:CGRectMake(StatusItemLength -  StatusItemHeight, 0, StatusItemHeight-8, StatusItemHeight -8)];
-	[button setImage:[NSImage imageNamed:@"ButtonIcon"]];
-	[button setTarget:self];
-	[button setAction:@selector(processButtonClick:)];
-	[searchView addSubview:button];
-	
-	tf = [[NSTextField alloc] initWithFrame:CGRectMake(0, 2, StatusItemLength -  StatusItemHeight - 7.0, StatusItemHeight-10.0)];
-	tf.bezelStyle = NSTextFieldRoundedBezel;
-	tf.bezeled = YES;
+	if (!tf) {
+		NSView *searchView = [[NSView alloc] initWithFrame:CGRectMake(0, 0, StatusItemLength, StatusItemHeight)];
+		NSButton *button = [[NSButton alloc] initWithFrame:CGRectMake(StatusItemLength -  StatusItemHeight, 0, StatusItemHeight-8, StatusItemHeight -8)];
+		[button setImage:[NSImage imageNamed:@"ButtonIcon"]];
+		[button setTarget:self];
+		[button setAction:@selector(processButtonClick:)];
+		[searchView addSubview:button];
+		
+		tf = [[NSTextField alloc] initWithFrame:CGRectMake(0, 2, StatusItemLength -  StatusItemHeight - 7.0, StatusItemHeight-10.0)];
+		tf.bezelStyle = NSTextFieldRoundedBezel;
+		tf.bezeled = YES;
+		tf.delegate = self;
+		[searchView addSubview:tf];
+		statusItem.view = searchView;
+	}
 
 	
 	BOOL themeIsLight = [self appearanceIsDark];
@@ -73,12 +84,9 @@ double const StatusItemHeight = 28.0;
 		initWithString: NSLocalizedString(@"Search in Finder for...",@"")
 									   attributes: blueDict];
 	[[tf cell] setPlaceholderAttributedString: blueString];
-	
-	tf.delegate = self;
-	[searchView addSubview:tf];
+
 	[tf becomeFirstResponder];
 	
-	statusItem.view = searchView;
 }
 
 
@@ -121,5 +129,19 @@ double const StatusItemHeight = 28.0;
 		return NO;
 	}
 }
+
+
+#pragma mark -
+
+//
+// Selector is called when Mac is awaken from sleep mode. As this event can occur next day after previous lessons, we
+// should make request for a new schedule. But if user is nort registered yet, we should initiate registration
+// sequence instead.
+//
+- (void) wakeFromSleep:(NSNotification *) note
+{
+	[self setupStatusBar];
+}
+
 
 @end
