@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "NSWindow+CanBecameKeyWindow.h"
 
+#import "Definitions.h"
+
 double const StatusItemLength = 280.0;
 double const StatusItemHeight = 28.0;
 
@@ -54,7 +56,20 @@ double const StatusItemHeight = 28.0;
 	tf.bezelStyle = NSTextFieldRoundedBezel;
 	tf.bezeled = YES;
 	tf.backgroundColor = [NSColor whiteColor];
-	tf.placeholderString = NSLocalizedString(@"Search in Finder for...",@"");
+	
+	BOOL themeIsLight = YES;
+	
+	NSColor *placeHolderColor = (themeIsLight ?  [NSColor colorWithRed:0.4 green:0.4 blue:1.0 alpha:1.0] :
+								 [NSColor colorWithRed:0.8 green:0.8 blue:1.0 alpha:1.0] );
+	
+	NSDictionary *blueDict = @{
+							   NSForegroundColorAttributeName : placeHolderColor,
+							   };
+	NSAttributedString *blueString = [[NSAttributedString alloc]
+		initWithString: NSLocalizedString(@"Search in Finder for...",@"")
+									   attributes: blueDict];
+	[[tf cell] setPlaceholderAttributedString: blueString];
+	
 	tf.delegate = self;
 	[searchView addSubview:tf];
 	[tf becomeFirstResponder];
@@ -78,6 +93,10 @@ double const StatusItemHeight = 28.0;
 	NSString *stringToSearch = tf.stringValue;
 //	NSLog(@"Button clicked -- %@", stringToSearch);
 
+#ifdef PERSCENTAGE_PROCESSING
+	stringToSearch  = [stringToSearch stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
+#endif
+	
 	BOOL opened = [[NSWorkspace sharedWorkspace] showSearchResultsForQueryString:stringToSearch];
 //	NSLog(@"opened = %hhd", opened);
 //	return;

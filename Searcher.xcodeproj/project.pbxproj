@@ -19,6 +19,7 @@
 		1B76D9102292AC92006962A5 /* NSWindow+CanBecameKeyWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSWindow+CanBecameKeyWindow.h"; sourceTree = "<group>"; };
 		1B76D9112292AC92006962A5 /* NSWindow+CanBecameKeyWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+CanBecameKeyWindow.m"; sourceTree = "<group>"; };
 		1B76D9332292C2FF006962A5 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		1B76D9352293E2B9006962A5 /* Definitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		1BD90F2922929D910019A0A3 /* Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Searcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD90F2C22929D910019A0A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1BD90F2D22929D910019A0A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 				1BD90F3422929D940019A0A3 /* Info.plist */,
 				1BD90F3522929D940019A0A3 /* main.m */,
 				1BD90F3722929D940019A0A3 /* Searcher.entitlements */,
+				1B76D9352293E2B9006962A5 /* Definitions.h */,
 			);
 			path = Searcher;
 			sourceTree = "<group>";
